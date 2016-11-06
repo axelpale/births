@@ -14,9 +14,9 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:active { text-decoration: underline; }
 
-/*a:link { color: blue; }
-a:visited { color: blue; }
-a:hover { color: lightblue; }*/
+a:link { color: #36C; }
+a:visited { color: #36C; }
+a:hover { color: #25B; }
 
 #canvas {
   position: fixed;
