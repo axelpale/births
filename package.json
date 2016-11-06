@@ -1,0 +1,17 @@
+{
+  "name": "births",
+  "version": "1.0.0",
+  "description": "World birth rate visualization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "visualization"
+  ],
+  "author": "Akseli Palen",
+  "license": "MIT",
+  "scripts": {
+    "deploy": "rsync -av --delete /Users/xeli/Build/births/ xeli.webfactional.com:~/webapps/births/"
+  }
+}

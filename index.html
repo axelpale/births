@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>World Birth Rate</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <canvas id="canvas">
+  </canvas>
+
+  <div id="info">
+    <strong>In one minute, about 256 babies are born</strong> as estimated by <a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2054.html" target="_blank">The World Factbook</a> in 2016. Here we show how this rate looks like. Thus, since your arrival to this page, about <span id="count">0</span> little ones have started their journey in our vast world. <strong>Let us keep it in a good condition for them.</strong>
+  </div>
+
+  <script src="js/sprinkler.min.js"></script>
+  <script>
+  (function (Sprinkler) {
+    var c = document.getElementById('canvas');
+    var s = Sprinkler.create(c);
+    var FULL_ROTATION = 2 * Math.PI;
+
+    s.load(['img/baby-pink-optimized.png'], function (err, start) {
+      if (err) { console.error(err); return; }
+      start({
+        selectImages: [0],
+        imagesInSecond: 4.3,
+
+        zMin: 0.75, zMax: 0.85,
+        dzMin: -0.11, dzMax: -0.11,
+        ddzMin: -0.002, ddzMax: -0.002,
+
+        rMin: 0.6 * FULL_ROTATION, rMax: 0.6 * FULL_ROTATION,
+        drMin: -1, drMax: 0,
+        ddrMin: -1.5, ddrMax: 0,
+
+        aMin: 1.0, aMax: 1.0,
+        daMin: 0, daMax: 0,
+        ddaMin: -0.005, ddaMax: -0.005,
+
+        dxMin: -100, dxMax: 0,
+        ddxMin: 0, ddxMax: 0,
+
+        dyMin: 120, dyMax: 1620,
+        ddyMin: 20, ddyMax: 20,
+      });
+
+      var counter = document.getElementById('count');
+      var i = 0;
+
+      (function tick() {
+        counter.innerHTML = i.toString();
+        i += 1;
+        setTimeout(tick, 1000 / 4.3);
+      }());
+    });
+  }(Sprinkler));
+  </script>
+
+</body>
+</html>
