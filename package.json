@@ -12,6 +12,6 @@
   "author": "Akseli Palen",
   "license": "MIT",
   "scripts": {
-    "deploy": "rsync -av --delete /Users/xeli/Build/births/ xeli.webfactional.com:~/webapps/births/"
+    "deploy": "rsync -av --delete --exclude '.git' /Users/xeli/Build/births/ xeli.webfactional.com:~/webapps/births/"
   }
 }
