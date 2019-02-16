@@ -76,15 +76,14 @@
   }(Sprinkler));
 
   (function (backgroundSpeed) {
-
     var x = 0;
     var y = 0;
 
     setInterval(function () {
-      y += -2;
+      y += -backgroundSpeed;
       document.body.style.backgroundPosition = x + 'px ' + y + 'px'
     }, 20)
-  }());
+  }(2));
   </script>
 
 </body>
