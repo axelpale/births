@@ -40,22 +40,27 @@
         selectImages: [0, 1, 2, 2, 2, 3, 3],
         imagesInSecond: 4.3,
 
-        zMin: 0.75, zMax: 0.85,
-        dzMin: -0.11, dzMax: -0.11,
+        // Scale
+        zMin: 0.15, zMax: 0.2,
+        dzMin: 0, dzMax: 0,
         ddzMin: -0.002, ddzMax: -0.002,
 
-        rMin: 0.6 * FULL_ROTATION, rMax: 0.6 * FULL_ROTATION,
-        drMin: -1, drMax: 0,
-        ddrMin: -1.5, ddrMax: 0,
+        // Rotation
+        rMin: 0, rMax: 0.6 * FULL_ROTATION,
+        drMin: -1, drMax: 1,
+        ddrMin: -0, ddrMax: 0,
 
+        // Alpha
         aMin: 1.0, aMax: 1.0,
         daMin: 0, daMax: 0,
         ddaMin: -0.005, ddaMax: -0.005,
 
-        dxMin: -100, dxMax: 0,
+        // Horizontal
+        dxMin: -100, dxMax: 100,
         ddxMin: 0, ddxMax: 0,
 
-        dyMin: 120, dyMax: 1620,
+        // Vertical speed from the starting height y = 0
+        dyMin: 120, dyMax: 320,
         ddyMin: 20, ddyMax: 20,
       });
 
