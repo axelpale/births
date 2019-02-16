@@ -16,7 +16,13 @@
       <strong>In one minute, about 256 babies are born</strong> as estimated in <a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2054.html" target="_blank">The World Factbook</a> in 2016. Here we show how this rate looks like. Thus, since your arrival to this page, about <span id="count">0</span> little ones have started their journey in our vast world. <strong>Let us keep it in a good condition for them.</strong>
     </div>
     <div style="text-align: right">
-      <a href="https://github.com/axelpale/births">&copy;</a>
+      <a id="copyright" href="http://akselipalen.com">&copy;</a>
+    </div>
+    <div id="authors" style="display: none">
+      <p>
+        Code by <a href="http://akselipalen.com">Akseli Palén</a><br>
+        Graphics by <a href="https://www.linkedin.com/in/pirjo-palen-18a7a5142/">Pirjo Palén</a>
+      </p>
     </div>
   </div>
 
@@ -84,6 +90,37 @@
       document.body.style.backgroundPosition = x + 'px ' + y + 'px'
     }, 20)
   }(2));
+
+  (function (copyId, authorsId) {
+    var copyright = document.getElementById(copyId)
+    var container = document.getElementById(authorsId)
+
+    var open = false;
+    var respond = true;
+
+    var clickHandler = function (ev) {
+      ev.preventDefault();
+
+      if (!respond) {
+        return;
+      }
+
+      if (open) {
+        container.style.display = 'none';
+      } else {
+        container.style.display = 'block';
+
+        // Avoid double click flicker
+        respond = false;
+        setTimeout(function () {
+          respond = true;
+        }, 1500);
+      }
+      open = !open;
+    }
+
+    copyright.addEventListener('click', clickHandler)
+  }('copyright', 'authors'))
   </script>
 
 </body>
