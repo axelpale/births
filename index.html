@@ -22,10 +22,17 @@
     var s = Sprinkler.create(c);
     var FULL_ROTATION = 2 * Math.PI;
 
-    s.load(['img/baby-pink-optimized.png'], function (err, start) {
+    var imgs = [
+      'img/baby-pink.png',
+      'img/baby-yellow.png',
+      'img/baby-brown.png',
+      'img/baby-black.png'
+    ];
+
+    s.load(imgs, function (err, start) {
       if (err) { console.error(err); return; }
       start({
-        selectImages: [0],
+        selectImages: [0, 1, 2, 2, 2, 3, 3],
         imagesInSecond: 4.3,
 
         zMin: 0.75, zMax: 0.85,
