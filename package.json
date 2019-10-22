@@ -1,5 +1,6 @@
 {
   "name": "births",
+  "private": true,
   "version": "1.0.0",
   "description": "World birth rate visualization",
   "main": "index.js",
