@@ -86,7 +86,7 @@
     var y = 0;
 
     setInterval(function () {
-      y += -backgroundSpeed;
+      y = (y - backgroundSpeed + 512) % 512;
       document.body.style.backgroundPosition = x + 'px ' + y + 'px'
     }, 20)
   }(2));
